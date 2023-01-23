@@ -1,0 +1,49 @@
+﻿@model WebTestVersta.Models.Order
+<h4>Новый заказ</h4>
+
+<div class="edit-block">
+    @using (Html.BeginForm("CreateOrder", "Order"))
+
+    {
+        <h5>@Html.ValidationSummary()</h5>
+        @*@Html.Hidden("Id", Model.Id.ToString())*@
+        <div class="dataBox">
+            <label>Город отправителя</label><br />
+            @Html.TextBoxFor(o => o.Sender.SenderCity, new { @class = "text-box" })
+            @*@Html.ValidationMessageFor(s => s.sender.SenderCity)*@
+        </div>
+        <div class="dataBox">
+            <label>Адрес отправителя</label><br />
+            @Html.TextBoxFor(o => o.Sender.SenderAddress, new { @class = "text-box" })
+            @*@Html.ValidationMessageFor(s => s.sender.SenderAddress)*@
+        </div>
+        <div class="dataBox">
+            <label>Город получателя</label><br />
+            @Html.TextBoxFor(o => o.Rec.RecCity, new { @class = "text-box" })
+            @*@Html.ValidationMessageFor(r => r.recipient.RecCity)*@
+        </div>
+        <div class="dataBox">
+            <label>Адрес получателя</label><br />
+            @Html.TextBoxFor(o => o.Rec.RecAddress, new { @class = "text-box" })
+            @*@Html.ValidationMessageFor(r => r.recipient.RecAddress)*@
+        </div>
+        <div class="dataBox">
+            <label>Вес груза</label><br />
+            @Html.TextBoxFor(o => o.CargoWeight, new { @class = "text-box" })
+            @*@Html.ValidationMessageFor(o => o.order.CargoWeight)*@
+        </div>
+        <div class="dataBox">
+            <label>Дата забора груза</label><br />
+            @Html.TextBoxFor(o => o.PickupDate, new { @class = "text-box" })
+            @Html.ValidationMessageFor(o => o.PickupDate)
+        </div>
+
+
+        <div class="dataBox">
+            <input type="submit" value="Сохранить" />
+        </div>
+    }
+</div>
+<div>
+    <a asp-controller="Order" asp-action="IndexOrders">Back to List</a>
+</div>

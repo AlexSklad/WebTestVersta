@@ -1,0 +1,27 @@
+﻿@model WebTestVersta.Models.Recipient
+<h4>Новый получатель</h4>
+
+<div class="edit-block">
+    @using (Html.BeginForm("CreateRec", "Recipient"))
+
+    {
+            <h5>@Html.ValidationSummary()</h5>
+        @Html.Hidden("Id", Model.Id.ToString())
+            <div class="dataBox">
+                <label>Город отправителя</label><br />
+            @Html.TextBoxFor(r => r.RecCity, new { @class = "text-box" })
+            </div>
+            <div class="dataBox">
+                <label>Адрес отправителя</label><br />
+            @Html.TextBoxFor(r => r.RecAddress, new { @class = "text-box" })
+            </div>
+
+
+            <div class="dataBox">
+                <input type="submit" value="Сохранить" />
+            </div>
+    }
+</div>
+<div>
+    <a asp-controller="Recipient" asp-action="IndexRecs">Back to List</a>
+</div>

@@ -1,0 +1,36 @@
+﻿@model IEnumerable<WebTestVersta.Models.Sender>
+
+<!DOCTYPE html>
+@*<html>
+    </html>*@
+<div class="text-center">
+    <h2>@ViewData["Title"]</h2>
+    <div class="sender-list">
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Город отправителя</th>
+                <th>Адрес отправителя</th>
+                <th>Управление</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.SenderCity</td>
+                    <td>@item.SenderAddress</td>
+                    <td>
+                        @Html.ActionLink("Изменить", "Edit", item)
+                        @Html.ActionLink("Удалить", "Delete", item)
+                    </td>
+                </tr>
+            }
+        </table>
+
+    </div>
+</div>
+<div class="text-center" style="background-color: white; margin: 4px 0px 0px 0px; height: 20px"></div>
+
+<div class="text-left" style="margin: 4px 0px 0px 0px; background-color: aquamarine; ">
+    @Html.ActionLink("Добавить нового отправителя", "CreateSender")
+</div>

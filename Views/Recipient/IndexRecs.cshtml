@@ -1,0 +1,36 @@
+﻿@model IEnumerable<WebTestVersta.Models.Recipient>
+
+<!DOCTYPE html>
+@*<html>
+    </html>*@
+<div class="text-center">
+    <h2>@ViewData["Title"]</h2>
+    <div class="sender-list">
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Город получателя</th>
+                <th>Адрес получателя</th>
+                <th>Управление</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.RecCity</td>
+                    <td>@item.RecAddress</td>
+                    <td>
+                        @Html.ActionLink("Подробнее", "Edit", item)
+                        @Html.ActionLink("Удалить", "Delete", item)
+                    </td>
+                </tr>
+            }
+        </table>
+
+    </div>
+</div>
+<div class="text-center" style="background-color: white; margin: 4px 0px 0px 0px; height: 20px"></div>
+
+<div class="text-left" style="margin: 4px 0px 0px 0px; background-color: aquamarine; ">
+    @Html.ActionLink("Добавить нового получателя", "CreateRec")
+</div>
