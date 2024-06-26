@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
+using System.Linq.Expressions;
 using WebTestVersta.Models;
 
 namespace WebTestVersta.Controllers
@@ -18,8 +19,8 @@ namespace WebTestVersta.Controllers
         public async Task<IActionResult> IndexOrders()
         {
             ViewData["Title"] = "Таблица отправителей";
-
-            return View(await db.Orders.ToListAsync());
+            if (db.Orders.Count() != 0) return View(await db.Orders.ToListAsync());
+            return View();
         }
         [HttpGet]
         public IActionResult CreateOrder()
@@ -33,13 +34,35 @@ namespace WebTestVersta.Controllers
         public IActionResult CreateOrder(Order model)
         {
             model.OrderNum = model.GenerateOrderNum();
-            Sender _sender = db.Senders.FirstOrDefault(s => s.SenderAddress == model.Sender.SenderAddress);
+            Sender _sender = null;
+            Recipient _rec = null;
+
+            try
+            {
+                 _sender = db.Senders.FirstOrDefault(s => s.SenderAddress == model.Sender.SenderAddress);
+
+            }
+            catch (Exception)
+            {
+
+                //throw ;
+            }            
+                
             if (_sender != null)
             {
                 model.Sender = _sender;
                 model.SenderId = _sender.Id;
             }
-            Recipient _rec = db.Recipients.FirstOrDefault(s => s.RecAddress == model.Rec.RecAddress);
+            try
+            {
+                _rec = db.Recipients.FirstOrDefault(s => s.RecAddress == model.Rec.RecAddress);
+
+            }
+            catch (Exception)
+            {
+
+                //throw;
+            }            
             if (_rec != null)
             {
                 model.Rec= _rec;

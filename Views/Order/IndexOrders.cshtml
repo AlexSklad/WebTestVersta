@@ -16,20 +16,23 @@
                 <th>Дата забора груза</th>
                 <th>Управление</th>
             </tr>
-            @foreach (var item in Model)
+            @if (Model != null)
             {
-                <tr>
-                    @*<td>@item.Id</td>*@
-                    <td>@item.OrderNum</td>
-                    <td>@item.Sender.SenderCity</td>
-                    <td>@item.Rec.RecCity</td>
-                    <td>@item.CargoWeight</td>
-                    <td>@item.ReturnDateToDisplay</td>
-                    <td>
-                        @Html.ActionLink("Подробнее", "OpenReadOnly", item)
-                        @Html.ActionLink("Удалить", "Delete", item)
-                    </td>
-                </tr>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        @*<td>@item.Id</td>*@
+                        <td>@item.OrderNum</td>
+                        <td>@item.Sender.SenderCity</td>
+                        <td>@item.Rec.RecCity</td>
+                        <td>@item.CargoWeight</td>
+                        <td>@item.ReturnDateToDisplay</td>
+                        <td>
+                            @Html.ActionLink("Подробнее", "OpenReadOnly", item)
+                            @Html.ActionLink("Удалить", "Delete", item)
+                        </td>
+                    </tr>
+                }
             }
         </table>
 

@@ -67,7 +67,6 @@ E:\GitHub\WebTestVersta\WebTestVersta\obj\Debug\net7.0\staticwebassets.developme
 E:\GitHub\WebTestVersta\WebTestVersta\obj\Debug\net7.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 E:\GitHub\WebTestVersta\WebTestVersta\obj\Debug\net7.0\scopedcss\bundle\WebTestVersta.styles.css
 E:\GitHub\WebTestVersta\WebTestVersta\obj\Debug\net7.0\scopedcss\projectbundle\WebTestVersta.bundle.scp.css
-E:\GitHub\WebTestVersta\WebTestVersta\obj\Debug\net7.0\WebTestVersta.csproj.CopyComplete
 E:\GitHub\WebTestVersta\WebTestVersta\obj\Debug\net7.0\WebTestVersta.dll
 E:\GitHub\WebTestVersta\WebTestVersta\obj\Debug\net7.0\refint\WebTestVersta.dll
 E:\GitHub\WebTestVersta\WebTestVersta\obj\Debug\net7.0\WebTestVersta.pdb
@@ -75,3 +74,5 @@ E:\GitHub\WebTestVersta\WebTestVersta\obj\Debug\net7.0\WebTestVersta.genruntimec
 E:\GitHub\WebTestVersta\WebTestVersta\obj\Debug\net7.0\ref\WebTestVersta.dll
 E:\GitHub\WebTestVersta\WebTestVersta\bin\Debug\net7.0\Castle.Core.dll
 E:\GitHub\WebTestVersta\WebTestVersta\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Proxies.dll
+E:\GitHub\WebTestVersta\WebTestVersta\obj\Debug\net7.0\WebTestVersta.sourcelink.json
+E:\GitHub\WebTestVersta\WebTestVersta\obj\Debug\net7.0\WebTestV.C0577BE2.Up2Date
